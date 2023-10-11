@@ -31,6 +31,9 @@ app.use(express.json());
 app.use(helmet());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Jobs api');
+});
 // routes
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/jobs', authenticationUser, jobsRouter);
